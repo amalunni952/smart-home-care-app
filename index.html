@@ -1,0 +1,802 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Smart Home Care — Trusted Home Care, Verified in Real Time</title>
+  <meta name="description" content="Smart Home Care is a secure platform for booking trusted home care professionals with OTP + live location verification and transparent care updates." />
+  <meta name="theme-color" content="#0b1220" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Swiper (reviews slider) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Decorative background -->
+  <div class="bg">
+    <div class="bg__grid"></div>
+    <div class="bg__glow bg__glow--a"></div>
+    <div class="bg__glow bg__glow--b"></div>
+    <div class="bg__glow bg__glow--c"></div>
+    <div class="bg__noise" aria-hidden="true"></div>
+  </div>
+
+  <header class="header" id="top">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="#top" aria-label="Smart Home Care Home">
+        <span class="brand__mark" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <path d="M14 2.25 24.5 10v15.75a.9.9 0 0 1-.9.9H4.4a.9.9 0 0 1-.9-.9V10L14 2.25Z" class="brand__markFill"/>
+            <path d="M14 25.1V15.6" class="brand__markStroke"/>
+            <path d="M9.4 15.6h9.2" class="brand__markStroke"/>
+            <path d="M14 8.2c1.9-2.1 4.6-.9 4.6 1.4 0 2.5-2.8 4.2-4.6 5.7-1.8-1.5-4.6-3.2-4.6-5.7 0-2.3 2.7-3.5 4.6-1.4Z" class="brand__heart"/>
+          </svg>
+        </span>
+        <span class="brand__text">Smart Home Care</span>
+        <span class="brand__pill">Premium</span>
+      </a>
+
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="navMenu">
+        <span class="sr-only">Open menu</span>
+        <span class="nav__bars" aria-hidden="true"></span>
+      </button>
+
+      <div class="nav__menu" id="navMenu">
+        <a class="nav__link" href="#features">Features</a>
+        <a class="nav__link" href="#how">How it works</a>
+        <a class="nav__link" href="#services">Services</a>
+        <a class="nav__link" href="#reviews">Reviews</a>
+        <a class="nav__link" href="#security">Trust & Safety</a>
+        <a class="nav__link" href="caregiver.html">Caretaker View</a>
+        <a class="nav__link" href="dashboard.html">Dashboard</a>
+        <div class="nav__actions">
+          <a class="btn btn--ghost" href="#demo">Live Demo</a>
+          <a class="btn btn--primary" href="#cta">Book a caregiver</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <div class="hero__kicker" data-reveal>
+            <span class="dot dot--pulse" aria-hidden="true"></span>
+            Verified care • real-time visibility • transparent updates
+          </div>
+
+          <h1 class="hero__title" data-reveal>
+            Trusted home care,
+            <span class="gradient">verified in real time.</span>
+          </h1>
+
+          <p class="hero__subtitle" data-reveal>
+            Book nearby caregivers with map-based discovery, confirm arrival with OTP,
+            and track service hours with live location — all while care updates stay
+            organized in digital records.
+          </p>
+
+          <div class="hero__cta" data-reveal>
+            <a class="btn btn--primary btn--lg" href="#cta">
+              Get started
+              <span class="btn__icon" aria-hidden="true">→</span>
+            </a>
+            <a class="btn btn--glass btn--lg" href="#how">
+              See how it works
+              <span class="btn__icon" aria-hidden="true">▶</span>
+            </a>
+          </div>
+
+          <div class="hero__trust" data-reveal>
+            <div class="trust__item">
+              <div class="trust__metric">OTP + GPS</div>
+              <div class="trust__label">Arrival & session verification</div>
+            </div>
+            <div class="trust__item">
+              <div class="trust__metric">Care logs</div>
+              <div class="trust__label">Vitals, meds, observations</div>
+            </div>
+            <div class="trust__item">
+              <div class="trust__metric">Role-based</div>
+              <div class="trust__label">Client • Professional • Admin</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-label="Platform preview" data-reveal>
+          <div class="glassCard preview">
+            <div class="preview__top">
+              <div class="traffic" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="preview__search">
+                <span class="preview__searchIcon" aria-hidden="true">⌕</span>
+                Nearby caregivers · 2.4 km
+              </div>
+              <div class="preview__badge">Live</div>
+            </div>
+
+            <div class="preview__body">
+              <div class="map">
+                <div class="map__pulse map__pulse--a" aria-hidden="true"></div>
+                <div class="map__pulse map__pulse--b" aria-hidden="true"></div>
+                <div class="map__pulse map__pulse--c" aria-hidden="true"></div>
+
+                <div class="pin pin--me" style="--x:58%;--y:50%">
+                  <span class="pin__label">Client</span>
+                </div>
+                <div class="pin" style="--x:28%;--y:38%">
+                  <span class="pin__label">Nurse</span>
+                </div>
+                <div class="pin" style="--x:74%;--y:30%">
+                  <span class="pin__label">Physio</span>
+                </div>
+                <div class="pin" style="--x:42%;--y:68%">
+                  <span class="pin__label">Caregiver</span>
+                </div>
+              </div>
+
+              <div class="preview__panel">
+                <div class="panel__title">
+                  <span class="pill">Booking</span>
+                  <span class="muted">Step 3/4</span>
+                </div>
+
+                <div class="panel__row">
+                  <div class="panel__icon" aria-hidden="true">🔑</div>
+                  <div>
+                    <div class="panel__label">Arrival OTP</div>
+                    <div class="panel__value">
+                      <span class="otp" aria-label="One time password code">
+                        <span>4</span><span>2</span><span>9</span><span>1</span>
+                      </span>
+                      <span class="muted">Share after arrival</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="panel__row">
+                  <div class="panel__icon" aria-hidden="true">📍</div>
+                  <div>
+                    <div class="panel__label">Geo-fence</div>
+                    <div class="panel__value">Active within 120m radius</div>
+                  </div>
+                </div>
+
+                <div class="panel__row">
+                  <div class="panel__icon" aria-hidden="true">⏱</div>
+                  <div>
+                    <div class="panel__label">Session</div>
+                    <div class="panel__value">Time tracking enabled</div>
+                  </div>
+                </div>
+
+                <a class="btn btn--primary btn--wide" href="#demo">Open live demo</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="floating floating--a" aria-hidden="true">
+            <div class="chip">
+              <span class="chip__icon">✅</span>
+              <span>Verified professional</span>
+            </div>
+          </div>
+
+          <div class="floating floating--b" aria-hidden="true">
+            <div class="chip">
+              <span class="chip__icon">📝</span>
+              <span>Care update posted</span>
+            </div>
+          </div>
+
+          <div class="floating floating--c" aria-hidden="true">
+            <div class="chip">
+              <span class="chip__icon">🔔</span>
+              <span>Arrival in 4 min</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="marquee" aria-label="Key capabilities">
+        <div class="marquee__track">
+          <span>Live location verification</span>
+          <span>OTP arrival confirmation</span>
+          <span>Digital care records</span>
+          <span>Geo-fencing session tracking</span>
+          <span>Certificate verification</span>
+          <span>Smart matching</span>
+          <span>Admin quality monitoring</span>
+          <span>Emergency on-demand support</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <h2 class="section__title">Designed for trust, built for speed</h2>
+          <p class="section__subtitle">
+            A transparent home-care ecosystem with real-time discovery, accountable service delivery,
+            and structured patient updates.
+          </p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card" data-reveal>
+            <div class="card__icon" aria-hidden="true">🗺️</div>
+            <h3 class="card__title">Nearby caregiver discovery</h3>
+            <p class="card__text">Find professionals around you using map-based availability and smart matching.</p>
+            <div class="card__meta">
+              <span class="tag">Real-time</span><span class="tag">Location-aware</span>
+            </div>
+          </article>
+
+          <article class="card" data-reveal>
+            <div class="card__icon" aria-hidden="true">🔐</div>
+            <h3 class="card__title">OTP + location verification</h3>
+            <p class="card__text">Confirm physical presence on arrival and keep sessions verified through geo-fencing.</p>
+            <div class="card__meta">
+              <span class="tag">Anti-fraud</span><span class="tag">Accountability</span>
+            </div>
+          </article>
+
+          <article class="card" data-reveal>
+            <div class="card__icon" aria-hidden="true">📋</div>
+            <h3 class="card__title">Patient care updates</h3>
+            <p class="card__text">Vitals, medications and observations recorded with time-based updates—visible to clients and admins.</p>
+            <div class="card__meta">
+              <span class="tag">Continuity</span><span class="tag">Auditable</span>
+            </div>
+          </article>
+
+          <article class="card" data-reveal>
+            <div class="card__icon" aria-hidden="true">📄</div>
+            <h3 class="card__title">Certificate verification</h3>
+            <p class="card__text">ID and certificate uploads with manual verification today—AI-assisted validation ready for scale.</p>
+            <div class="card__meta">
+              <span class="tag">Compliance</span><span class="tag">Profile checks</span>
+            </div>
+          </article>
+
+          <article class="card" data-reveal>
+            <div class="card__icon" aria-hidden="true">🤖</div>
+            <h3 class="card__title">AI-ready capabilities</h3>
+            <p class="card__text">OCR extraction, duplicate detection, smart matching, and care note summarization.</p>
+            <div class="card__meta">
+              <span class="tag">Automation</span><span class="tag">Insights</span>
+            </div>
+          </article>
+
+          <article class="card" data-reveal>
+            <div class="card__icon" aria-hidden="true">🛠️</div>
+            <h3 class="card__title">Admin oversight</h3>
+            <p class="card__text">Monitor operations, validate professionals, and ensure quality with a clear audit trail.</p>
+            <div class="card__meta">
+              <span class="tag">Controls</span><span class="tag">Quality</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section section--alt" id="how">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <h2 class="section__title">How booking works</h2>
+          <p class="section__subtitle">A smooth flow that prevents fraud and increases care transparency.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="step" data-reveal>
+            <div class="step__num">01</div>
+            <div class="step__body">
+              <h3 class="step__title">Choose service & caregiver</h3>
+              <p class="step__text">Select a service and compare verified professionals near you.</p>
+            </div>
+          </div>
+
+          <div class="step" data-reveal>
+            <div class="step__num">02</div>
+            <div class="step__body">
+              <h3 class="step__title">Confirm & generate OTP</h3>
+              <p class="step__text">Booking confirmation creates a one-time arrival OTP.</p>
+            </div>
+          </div>
+
+          <div class="step" data-reveal>
+            <div class="step__num">03</div>
+            <div class="step__body">
+              <h3 class="step__title">Share OTP after arrival</h3>
+              <p class="step__text">OTP is shared only when the caregiver arrives—ensuring presence.</p>
+            </div>
+          </div>
+
+          <div class="step" data-reveal>
+            <div class="step__num">04</div>
+            <div class="step__body">
+              <h3 class="step__title">Track session & care updates</h3>
+              <p class="step__text">Geo-fenced tracking + time-stamped care notes keep everyone informed.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="roles">
+          <div class="roles__card" data-reveal>
+            <h3 class="roles__title">User roles</h3>
+            <ul class="roles__list">
+              <li><span class="roles__badge">Client</span> Book services, track care, view updates</li>
+              <li><span class="roles__badge">Professional</span> Accept jobs, verify presence, submit notes</li>
+              <li><span class="roles__badge">Admin</span> Verify profiles, monitor quality & operations</li>
+            </ul>
+          </div>
+
+          <div class="roles__card roles__card--metric" data-reveal>
+            <div class="meter" role="img" aria-label="Quality signals meter">
+              <div class="meter__ring"></div>
+              <div class="meter__center">
+                <div class="meter__value" id="meterValue">92</div>
+                <div class="meter__label">Trust Score</div>
+              </div>
+            </div>
+            <div class="roles__metrics">
+              <div class="mini">
+                <div class="mini__k">Arrival</div>
+                <div class="mini__v">OTP verified</div>
+              </div>
+              <div class="mini">
+                <div class="mini__k">Session</div>
+                <div class="mini__v">Geo-fenced</div>
+              </div>
+              <div class="mini">
+                <div class="mini__k">Updates</div>
+                <div class="mini__v">Time-stamped</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <h2 class="section__title">Services offered</h2>
+          <p class="section__subtitle">From daily support to specialized care—delivered by verified professionals.</p>
+        </div>
+
+        <div class="grid grid--2">
+          <article class="service" data-reveal>
+            <div class="service__icon" aria-hidden="true">👴</div>
+            <div>
+              <h3 class="service__title">Elderly & long-term care</h3>
+              <p class="service__text">Daily routines, mobility support, companionship, and monitoring with care logs.</p>
+              <ul class="service__bullets">
+                <li>Scheduled visits</li>
+                <li>Medication reminders</li>
+                <li>Vitals tracking</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="service" data-reveal>
+            <div class="service__icon" aria-hidden="true">🏥</div>
+            <div>
+              <h3 class="service__title">Home nursing & physiotherapy</h3>
+              <p class="service__text">Qualified clinicians deliver procedures and rehab plans with session verification.</p>
+              <ul class="service__bullets">
+                <li>Wound care</li>
+                <li>Physio exercises</li>
+                <li>Care note summaries</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="service" data-reveal>
+            <div class="service__icon" aria-hidden="true">🩺</div>
+            <div>
+              <h3 class="service__title">Post-surgery & palliative care</h3>
+              <p class="service__text">Comfort-focused support with transparent updates for family and care teams.</p>
+              <ul class="service__bullets">
+                <li>Pain management logs</li>
+                <li>Recovery check-ins</li>
+                <li>Care continuity</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="service" data-reveal>
+            <div class="service__icon" aria-hidden="true">⚡</div>
+            <div>
+              <h3 class="service__title">Emergency & on-demand support</h3>
+              <p class="service__text">Fast discovery of nearby help—arrivals verified with OTP and live tracking.</p>
+              <ul class="service__bullets">
+                <li>Rapid dispatch</li>
+                <li>Real-time arrival ETAs</li>
+                <li>Admin escalation</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS (SLIDER) -->
+    <section class="section section--alt" id="reviews">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <h2 class="section__title">Patient & family reviews</h2>
+          <p class="section__subtitle">A few words from people who needed reliable care—right at home.</p>
+        </div>
+
+        <div class="reviews" data-reveal>
+          <div class="swiper" id="reviewsSwiper" aria-label="Reviews slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <article class="review">
+                  <div class="review__stars" aria-hidden="true">★★★★★</div>
+                  <p class="review__text">
+                    “The OTP arrival check made us feel safe instantly. We could see when the nurse arrived,
+                    and the care notes were clear every day.”
+                  </p>
+                  <div class="review__who">
+                    <div class="avatar" aria-hidden="true">AS</div>
+                    <div>
+                      <div class="review__name">Ayesha S.</div>
+                      <div class="review__meta">Post-surgery care • 2 weeks</div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="swiper-slide">
+                <article class="review">
+                  <div class="review__stars" aria-hidden="true">★★★★★</div>
+                  <p class="review__text">
+                    “The live location and time tracking removed confusion. We knew exactly how long the session was,
+                    and updates were time-stamped.”
+                  </p>
+                  <div class="review__who">
+                    <div class="avatar" aria-hidden="true">MK</div>
+                    <div>
+                      <div class="review__name">Mohamed K.</div>
+                      <div class="review__meta">Elderly care • Ongoing</div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="swiper-slide">
+                <article class="review">
+                  <div class="review__stars" aria-hidden="true">★★★★★</div>
+                  <p class="review__text">
+                    “As a caregiver, I love that everything is structured: arrival verification, session flow,
+                    and care notes. It keeps things professional.”
+                  </p>
+                  <div class="review__who">
+                    <div class="avatar" aria-hidden="true">NR</div>
+                    <div>
+                      <div class="review__name">Noura R.</div>
+                      <div class="review__meta">Care Professional</div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="swiper-slide">
+                <article class="review">
+                  <div class="review__stars" aria-hidden="true">★★★★★</div>
+                  <p class="review__text">
+                    “Admin monitoring helped us quickly resolve an issue. The platform’s transparency makes a huge difference
+                    when caring for someone at home.”
+                  </p>
+                  <div class="review__who">
+                    <div class="avatar" aria-hidden="true">LH</div>
+                    <div>
+                      <div class="review__name">Layla H.</div>
+                      <div class="review__meta">Family caregiver</div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="reviews__controls">
+              <button class="iconBtn" type="button" id="prevReview" aria-label="Previous review">
+                <span aria-hidden="true">←</span>
+              </button>
+              <div class="reviews__pagination" aria-hidden="true"></div>
+              <button class="iconBtn" type="button" id="nextReview" aria-label="Next review">
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="logos" aria-label="Trust indicators" data-reveal>
+          <div class="logos__item">Quality monitoring</div>
+          <div class="logos__item">Verified profiles</div>
+          <div class="logos__item">Digital care records</div>
+          <div class="logos__item">Secure access</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECURITY -->
+    <section class="section" id="security">
+      <div class="container">
+        <div class="security">
+          <div class="security__copy" data-reveal>
+            <h2 class="section__title">Trust & safety that’s measurable</h2>
+            <p class="section__subtitle">
+              The platform prevents misuse with OTP presence verification, live tracking during work hours,
+              and geo-fencing to ensure sessions happen where they should.
+            </p>
+
+            <div class="accordion" data-accordion>
+              <button class="acc" type="button" aria-expanded="false">
+                <span class="acc__title">OTP ensures physical presence</span>
+                <span class="acc__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="acc__panel">
+                <p>OTP is shared only after the professional arrives, reducing no-shows and preventing remote check-ins.</p>
+              </div>
+
+              <button class="acc" type="button" aria-expanded="false">
+                <span class="acc__title">GPS tracking during service hours</span>
+                <span class="acc__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="acc__panel">
+                <p>Location signals provide transparent session tracking and arrival ETAs without exposing unnecessary details.</p>
+              </div>
+
+              <button class="acc" type="button" aria-expanded="false">
+                <span class="acc__title">Geo-fencing prevents misuse</span>
+                <span class="acc__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="acc__panel">
+                <p>Sessions remain valid only within a defined radius, improving accountability for clients and admins.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="security__visual" data-reveal>
+            <div class="glassCard securityCard">
+              <div class="securityCard__top">
+                <div class="pill">Security</div>
+                <div class="muted">Role-based access</div>
+              </div>
+
+              <div class="securityCard__list">
+                <div class="secItem">
+                  <div class="secItem__icon" aria-hidden="true">🔒</div>
+                  <div>
+                    <div class="secItem__title">JWT sessions</div>
+                    <div class="secItem__desc">Short-lived access with refresh patterns.</div>
+                  </div>
+                </div>
+                <div class="secItem">
+                  <div class="secItem__icon" aria-hidden="true">🧩</div>
+                  <div>
+                    <div class="secItem__title">Role-based permissions</div>
+                    <div class="secItem__desc">Client, Professional, Admin boundaries.</div>
+                  </div>
+                </div>
+                <div class="secItem">
+                  <div class="secItem__icon" aria-hidden="true">🧾</div>
+                  <div>
+                    <div class="secItem__title">Audit trails</div>
+                    <div class="secItem__desc">Time-stamped updates and sessions.</div>
+                  </div>
+                </div>
+                <div class="secItem">
+                  <div class="secItem__icon" aria-hidden="true">🛡️</div>
+                  <div>
+                    <div class="secItem__title">Verification workflow</div>
+                    <div class="secItem__desc">ID + certificate checks before activation.</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="securityCard__cta">
+                <a class="btn btn--glass btn--wide" href="#cta">Start with verified care</a>
+              </div>
+            </div>
+
+            <div class="orbit" aria-hidden="true">
+              <div class="orbit__ring orbit__ring--1"></div>
+              <div class="orbit__ring orbit__ring--2"></div>
+              <div class="orbit__ring orbit__ring--3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEMO -->
+    <section class="section section--alt" id="demo">
+      <div class="container">
+        <div class="demo" data-reveal>
+          <div>
+            <h2 class="section__title">Interactive mini demo</h2>
+            <p class="section__subtitle">
+              This is a lightweight front-end prototype: try generating an OTP, simulating arrival, and posting a care update.
+            </p>
+          </div>
+
+          <div class="demo__grid">
+            <div class="glassCard demoCard">
+              <h3 class="demoCard__title">Booking & verification</h3>
+              <div class="demoRow">
+                <label class="label" for="service">Service</label>
+                <select id="service" class="input">
+                  <option>Elderly & long-term care</option>
+                  <option>Home nursing</option>
+                  <option>Physiotherapy</option>
+                  <option>Post-surgery care</option>
+                  <option>Emergency support</option>
+                </select>
+              </div>
+
+              <div class="demoRow">
+                <label class="label" for="caregiver">Care professional</label>
+                <select id="caregiver" class="input">
+                  <option>Verified Nurse — 1.2 km</option>
+                  <option>Physio Specialist — 2.0 km</option>
+                  <option>Caregiver — 0.8 km</option>
+                </select>
+              </div>
+
+              <div class="demoRow demoRow--actions">
+                <button class="btn btn--primary btn--wide" id="generateOtp">Generate OTP</button>
+                <button class="btn btn--glass btn--wide" id="simulateArrival">Simulate arrival</button>
+              </div>
+
+              <div class="status" role="status" aria-live="polite" id="bookingStatus">
+                Ready. Generate an OTP to begin.
+              </div>
+
+              <div class="otpBig" aria-label="Generated OTP">
+                <span id="otpOut">— — — —</span>
+              </div>
+            </div>
+
+            <div class="glassCard demoCard">
+              <h3 class="demoCard__title">Care update</h3>
+
+              <div class="demoRow">
+                <label class="label" for="vitals">Vitals</label>
+                <input class="input" id="vitals" placeholder="e.g., BP 118/76 • HR 72 • Temp 36.7°C" />
+              </div>
+
+              <div class="demoRow">
+                <label class="label" for="meds">Medication</label>
+                <input class="input" id="meds" placeholder="e.g., Paracetamol 500mg (after meal)" />
+              </div>
+
+              <div class="demoRow">
+                <label class="label" for="notes">Observations</label>
+                <textarea class="input input--area" id="notes" rows="4" placeholder="e.g., Patient comfortable, mobility improved, hydration encouraged."></textarea>
+              </div>
+
+              <div class="demoRow demoRow--actions">
+                <button class="btn btn--primary btn--wide" id="postUpdate">Post update</button>
+                <button class="btn btn--ghost btn--wide" id="clearUpdates">Clear</button>
+              </div>
+
+              <div class="updates" id="updates" aria-label="Care updates list"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="cta">
+      <div class="container">
+        <div class="cta__card" data-reveal>
+          <div class="cta__copy">
+            <h2 class="cta__title">Bring transparency to home care—today.</h2>
+            <p class="cta__text">
+              Start with verified professionals, OTP arrival checks, and clear care records.
+              Built to scale across locations, services, and future mobile apps.
+            </p>
+
+            <form class="cta__form" onsubmit="return false" aria-label="Get started form">
+              <div class="cta__fields">
+                <input class="input input--cta" type="text" placeholder="Full name" aria-label="Full name" required />
+                <input class="input input--cta" type="tel" placeholder="Phone number" aria-label="Phone number" required />
+                <select class="input input--cta" aria-label="Interested service">
+                  <option>Choose a service</option>
+                  <option>Elderly care</option>
+                  <option>Home nursing</option>
+                  <option>Physiotherapy</option>
+                  <option>Post-surgery</option>
+                  <option>Emergency</option>
+                </select>
+              </div>
+              <button class="btn btn--primary btn--lg" type="submit">
+                Request a callback
+                <span class="btn__icon" aria-hidden="true">→</span>
+              </button>
+              <p class="cta__fine muted">No spam. We’ll only contact you about care services and onboarding.</p>
+            </form>
+          </div>
+
+          <div class="cta__side">
+            <div class="ctaStats">
+              <div class="ctaStat">
+                <div class="ctaStat__k">Discovery</div>
+                <div class="ctaStat__v">Map-based availability</div>
+              </div>
+              <div class="ctaStat">
+                <div class="ctaStat__k">Verification</div>
+                <div class="ctaStat__v">OTP + live location</div>
+              </div>
+              <div class="ctaStat">
+                <div class="ctaStat__k">Records</div>
+                <div class="ctaStat__v">Digital care updates</div>
+              </div>
+              <div class="ctaStat">
+                <div class="ctaStat__k">Oversight</div>
+                <div class="ctaStat__v">Admin monitoring</div>
+              </div>
+            </div>
+
+            <div class="ctaBadge" aria-hidden="true">
+              <span class="ctaBadge__dot"></span>
+              Secure • Transparent • Scalable
+            </div>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div class="footer__left">
+            <div class="brand brand--footer">
+              <span class="brand__mark" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 28 28" fill="none">
+                  <path d="M14 2.25 24.5 10v15.75a.9.9 0 0 1-.9.9H4.4a.9.9 0 0 1-.9-.9V10L14 2.25Z" class="brand__markFill"/>
+                  <path d="M14 25.1V15.6" class="brand__markStroke"/>
+                  <path d="M9.4 15.6h9.2" class="brand__markStroke"/>
+                  <path d="M14 8.2c1.9-2.1 4.6-.9 4.6 1.4 0 2.5-2.8 4.2-4.6 5.7-1.8-1.5-4.6-3.2-4.6-5.7 0-2.3 2.7-3.5 4.6-1.4Z" class="brand__heart"/>
+                </svg>
+              </span>
+              <span class="brand__text">Smart Home Care</span>
+            </div>
+            <p class="footer__text">A healthcare technology platform for trusted home care services.</p>
+          </div>
+
+          <div class="footer__right">
+            <a class="footer__link" href="#features">Features</a>
+            <a class="footer__link" href="#how">How it works</a>
+            <a class="footer__link" href="#services">Services</a>
+            <a class="footer__link" href="#reviews">Reviews</a>
+            <a class="footer__link" href="#security">Trust & Safety</a>
+          </div>
+        </footer>
+
+        <div class="subfooter">
+          <span class="muted">© <span id="year"></span> Smart Home Care. All rights reserved.</span>
+          <a class="muted" href="#top">Back to top ↑</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Swiper -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

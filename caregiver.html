@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Caretaker View — Smart Home Care</title>
+  <meta name="description" content="Caretaker view: accept jobs, verify arrival with OTP, track session, and post patient updates." />
+  <meta name="theme-color" content="#0b1220" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="bg">
+    <div class="bg__grid"></div>
+    <div class="bg__glow bg__glow--a"></div>
+    <div class="bg__glow bg__glow--b"></div>
+    <div class="bg__glow bg__glow--c"></div>
+    <div class="bg__noise" aria-hidden="true"></div>
+  </div>
+
+  <header class="header" id="top">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="index.html" aria-label="Smart Home Care Home">
+        <span class="brand__mark" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <path d="M14 2.25 24.5 10v15.75a.9.9 0 0 1-.9.9H4.4a.9.9 0 0 1-.9-.9V10L14 2.25Z" class="brand__markFill"/>
+            <path d="M14 25.1V15.6" class="brand__markStroke"/>
+            <path d="M9.4 15.6h9.2" class="brand__markStroke"/>
+            <path d="M14 8.2c1.9-2.1 4.6-.9 4.6 1.4 0 2.5-2.8 4.2-4.6 5.7-1.8-1.5-4.6-3.2-4.6-5.7 0-2.3 2.7-3.5 4.6-1.4Z" class="brand__heart"/>
+          </svg>
+        </span>
+        <span class="brand__text">Smart Home Care</span>
+        <span class="brand__pill">App</span>
+      </a>
+
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="navMenu">
+        <span class="sr-only">Open menu</span>
+        <span class="nav__bars" aria-hidden="true"></span>
+      </button>
+
+      <div class="nav__menu" id="navMenu">
+        <a class="nav__link" href="index.html#features">Features</a>
+        <a class="nav__link" href="caregiver.html">Caretaker View</a>
+        <a class="nav__link" href="dashboard.html">Dashboard</a>
+        <div class="nav__actions">
+          <a class="btn btn--ghost" href="index.html#demo">Mini Demo</a>
+          <a class="btn btn--primary" href="index.html#cta">Book a caregiver</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="pageHeader" data-reveal>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> <span class="sep">/</span> <span>Caretaker View</span>
+      </div>
+      <h1 class="pageTitle">Caretaker workspace</h1>
+      <p class="pageLead">
+        A focused interface for professionals: accept jobs, verify arrival with OTP, keep sessions geo-verified,
+        and post time-stamped patient updates.
+      </p>
+    </section>
+
+    <section class="shell">
+      <aside class="sidebar" data-reveal>
+        <div class="sideTop">
+          <div class="userPic" aria-hidden="true">NR</div>
+          <div>
+            <div class="userName">Noura R.</div>
+            <div class="userMeta">Verified Care Professional</div>
+          </div>
+        </div>
+
+        <nav class="sideNav" aria-label="Caretaker navigation">
+          <a class="is-active" href="#jobs">Job queue</a>
+          <a href="#session">Active session</a>
+          <a href="#updates">Care notes</a>
+          <a href="#profile">Credentials</a>
+        </nav>
+
+        <div style="margin-top:12px" class="status" role="status" aria-live="polite" id="careStatus">
+          Ready. Select a job to begin.
+        </div>
+      </aside>
+
+      <div class="mainCol">
+        <section class="panel" id="jobs" data-reveal>
+          <div class="panelHead">
+            <div>
+              <h2 class="panelTitle">Job queue</h2>
+              <p class="panelSub">Incoming requests near you. Accepting a job generates an arrival OTP requirement.</p>
+            </div>
+            <div class="toolbar">
+              <button class="chipBtn" id="refreshJobs">↻ Refresh</button>
+              <button class="chipBtn" id="toggleOnline">● Online</button>
+            </div>
+          </div>
+
+          <table class="table" aria-label="Jobs table">
+            <thead>
+              <tr>
+                <th>Client</th>
+                <th>Service</th>
+                <th>Distance</th>
+                <th>ETA</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="jobsBody"></tbody>
+          </table>
+        </section>
+
+        <section class="split">
+          <section class="panel" id="session" data-reveal>
+            <div class="panelHead">
+              <div>
+                <h2 class="panelTitle">Active session</h2>
+                <p class="panelSub">Verify arrival, start session tracking, and keep updates auditable.</p>
+              </div>
+              <span class="pill2 pill2--info" id="sessionState">No active session</span>
+            </div>
+
+            <div class="demoRow">
+              <label class="label">Arrival OTP</label>
+              <div class="otpBig"><span id="otpNeed">— — — —</span></div>
+              <div class="demoRow" style="margin-top:10px">
+                <input class="input" id="otpInput" maxlength="4" inputmode="numeric" placeholder="Enter OTP shared by client" aria-label="OTP input" />
+              </div>
+              <div class="demoRow demoRow--actions">
+                <button class="btn btn--primary btn--wide" id="verifyOtp">Verify arrival</button>
+                <button class="btn btn--glass btn--wide" id="endSession">End session</button>
+              </div>
+              <div class="status" id="geoStatus">Geo-fence: inactive</div>
+            </div>
+          </section>
+
+          <section class="panel" id="updates" data-reveal>
+            <div class="panelHead">
+              <div>
+                <h2 class="panelTitle">Care notes</h2>
+                <p class="panelSub">Time-stamped notes visible to client and admin. (Demo behavior)</p>
+              </div>
+              <button class="chipBtn" id="exportNotes">⇩ Export</button>
+            </div>
+
+            <div class="demoRow">
+              <label class="label" for="vitals2">Vitals</label>
+              <input class="input" id="vitals2" placeholder="e.g., BP 118/76 • HR 72 • Temp 36.7°C" />
+            </div>
+            <div class="demoRow">
+              <label class="label" for="meds2">Medication</label>
+              <input class="input" id="meds2" placeholder="e.g., Paracetamol 500mg (after meal)" />
+            </div>
+            <div class="demoRow">
+              <label class="label" for="notes2">Observations</label>
+              <textarea class="input input--area" id="notes2" rows="3" placeholder="e.g., Patient comfortable, hydration encouraged."></textarea>
+            </div>
+
+            <div class="demoRow demoRow--actions">
+              <button class="btn btn--primary btn--wide" id="postNote">Post note</button>
+              <button class="btn btn--ghost btn--wide" id="clearNotes">Clear</button>
+            </div>
+
+            <div class="updates" id="notesList" aria-label="Notes list"></div>
+          </section>
+        </section>
+
+        <section class="panel" id="profile" data-reveal>
+          <div class="panelHead">
+            <div>
+              <h2 class="panelTitle">Credentials</h2>
+              <p class="panelSub">Verified identity & certificates — built for compliance and trust.</p>
+            </div>
+            <span class="pill2 pill2--ok">✅ Verified</span>
+          </div>
+
+          <div class="grid grid--3" style="margin-top:12px">
+            <article class="card">
+              <div class="card__icon" aria-hidden="true">🪪</div>
+              <h3 class="card__title">Identity</h3>
+              <p class="card__text">National ID checked and approved by admin.</p>
+              <div class="card__meta"><span class="tag">KYC</span><span class="tag">Audit-ready</span></div>
+            </article>
+            <article class="card">
+              <div class="card__icon" aria-hidden="true">🎓</div>
+              <h3 class="card__title">Certificates</h3>
+              <p class="card__text">Medical training and specialty documents validated.</p>
+              <div class="card__meta"><span class="tag">Compliance</span><span class="tag">Verified</span></div>
+            </article>
+            <article class="card">
+              <div class="card__icon" aria-hidden="true">⭐</div>
+              <h3 class="card__title">Quality score</h3>
+              <p class="card__text">Based on punctuality, session integrity, and note quality.</p>
+              <div class="card__meta"><span class="tag">92 / 100</span><span class="tag">Top tier</span></div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <footer class="subfooter" style="padding-bottom:32px">
+      <span class="muted">© <span id="year"></span> Smart Home Care.</span>
+      <a class="muted" href="#top">Back to top ↑</a>
+    </footer>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <div class="toast__t" id="toastT">Saved</div>
+    <div class="toast__p" id="toastP">Your update was posted.</div>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="js/caregiver.js"></script>
+</body>
+</html>
